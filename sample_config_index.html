@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<link rel="stylesheet" href="style/style.css">
+
+	<style>html{display:none;}</style>
+	<script>
+		//frame buster
+		if(self == top) {
+			document.documentElement.style.display = 'block';
+		}
+		else {
+			top.location = self.location;
+		}
+	</script>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+		var initTime = new Date ().getTime();
+		var startTime = new Date ().getTime();
+</script>
+<script type="text/javascript">
+	if ("".length > 0) {
+		document.domain = documentDomain;
+	}
+	SOA = {
+		Framework : {
+			Common : {
+				Configurator : {
+					params : {
+						"contextPath" : "/atmosphere",
+						"themeImplName" : "simpledev",
+						"themeName" : "simpledev",
+						"documentDomain" : "",
+						// changes every time a resource is uploaded to CMS or tenant is changed
+						"resourceVersion" : "_VJH9Se1Q6qUrODMKc6OREsA",
+						// changes every time a bundle is uploaded
+						"scriptsVersion" : "_Vk96EWD5C0i1Ft7fzgaLweA",
+						"resourcePathQueryString" : "?property.theme=simpledev&property.tenant=open",
+						"metadataUrl" : "/ui/apps/atmosphere/_Vk96EWD5C0i1Ft7fzgaLweA/metadata?property.theme=simpledev&property.tenant=open",
+						"cdnRoot" : "",
+						"userData" : {},
+						"hasFederation" : "false",
+
+						"environment": "development",
+
+						"iframework" : "uiframework/",
+						"iconsole" : "/ui/apps/atmosphere/_Vk96EWD5C0i1Ft7fzgaLweA/resources/console/",
+						"theme" : "/",
+						"tenant" : "/",
+
+						"iframework/" : "uiframework/",
+						"iconsole/" : "console/",
+						"theme/" : "/",
+						"tenant/" : "/"
+					}
+				}
+			}
+		}
+	};
+
+	steal = {
+		"paths" : {
+			"can/*" : "/uiframework/can/*.js",
+			"jquery/*" : "/uiframework/jquery/*.js",
+			"jquery" : "/uiframework/jquery/jquery.js",
+			"iframework/*" : "/uiframework/*.js",
+			"iconsole/*" : "/console/*.js",
+			"theme/*" : "/*.js",
+			"tenant/*" : "/*.js"
+		},
+		"main" : "init",
+		"baseUrl" : "/SOA/Dev/"
+	};
+</script>
+<script>
+	console.log("Time taken to do basic initialization before loading steal" , new Date().getTime() - startTime);
+	startTime = new Date().getTime();
+</script>
+<script type="text/javascript" src="/uiframework/steal/steal.js" config="SOA/Dev/package.json!npm">
+</script>
+<script>
+	console.log("Time taken to load steal" , new Date().getTime() - startTime);
+	startTime = new Date().getTime();
+</script>
+</html>
